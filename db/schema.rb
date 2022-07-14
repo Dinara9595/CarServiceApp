@@ -49,8 +49,10 @@ ActiveRecord::Schema.define(version: 2022_07_14_120010) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
     t.bigint "executor_id", null: false
+    t.bigint "order_id", null: false
     t.index ["category_id"], name: "index_services_on_category_id"
     t.index ["executor_id"], name: "index_services_on_executor_id"
+    t.index ["order_id"], name: "index_services_on_order_id"
   end
 
   add_foreign_key "categories", "services"
@@ -60,4 +62,5 @@ ActiveRecord::Schema.define(version: 2022_07_14_120010) do
   add_foreign_key "orders", "services"
   add_foreign_key "services", "categories"
   add_foreign_key "services", "executors"
+  add_foreign_key "services", "orders"
 end

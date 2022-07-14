@@ -29,6 +29,8 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   gem 'webdrivers'
+  gem "shoulda-matchers", "~> 5.1"
+  gem "rails-controller-testing", "~> 1.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
