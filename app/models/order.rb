@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
-  has_many :executors, dependent: :destroy
-  has_many :services, dependent: :destroy
+  belongs_to :executor
+  belongs_to :service
 
   validates :client, presence: true
 end
