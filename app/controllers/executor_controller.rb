@@ -1,0 +1,2 @@
+class ExecutorController < ApplicationController
+end

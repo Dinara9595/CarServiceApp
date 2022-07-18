@@ -24,6 +24,17 @@ while i <= services.count - 1
   i+=1
 end
 
-Order.create!([{ client: 'Иванов Антон', service: services[0], executor: executors[0] },
-               { client: 'Петров Игорь', service: services[6], executor: executors[2] },
-               { client: 'Антонов Иван', service: services[1], executor: executors[5] }])
+baskets = Basket.create!([{cost: 0}])
+
+orders = Order.create!([{ client: 'Иванов Дмитрий Петрович', executor: executors[0], basket: baskets[0] },
+               { client: 'Дмитриев Петр Иванович', executor: executors[5], basket: baskets[0] },
+               { client: 'Петров Иван Дмитриевич', executor: executors[2], basket: baskets[0] }])
+
+all_orders = Order.all
+
+all_orders.map do |order|
+  i = rand(0..6)
+  order.services.push(services[i])
+end
+
+all_orders[0].services.push(services.last)

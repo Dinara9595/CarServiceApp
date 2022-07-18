@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_17_143526) do
+ActiveRecord::Schema.define(version: 2022_07_18_133703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "baskets", force: :cascade do |t|
+    t.integer "cost", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -36,12 +42,19 @@ ActiveRecord::Schema.define(version: 2022_07_17_143526) do
 
   create_table "orders", force: :cascade do |t|
     t.string "client", null: false
-    t.bigint "service_id", null: false
-    t.bigint "executor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "basket_id"
+    t.bigint "executor_id"
+    t.index ["basket_id"], name: "index_orders_on_basket_id"
     t.index ["executor_id"], name: "index_orders_on_executor_id"
-    t.index ["service_id"], name: "index_orders_on_service_id"
+  end
+
+  create_table "orders_services", id: false, force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "order_id", null: false
+    t.index ["order_id", "service_id"], name: "index_orders_services_on_order_id_and_service_id"
+    t.index ["service_id", "order_id"], name: "index_orders_services_on_service_id_and_order_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -53,7 +66,5 @@ ActiveRecord::Schema.define(version: 2022_07_17_143526) do
     t.index ["category_id"], name: "index_services_on_category_id"
   end
 
-  add_foreign_key "orders", "executors"
-  add_foreign_key "orders", "services"
   add_foreign_key "services", "categories"
 end
