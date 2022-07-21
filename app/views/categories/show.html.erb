@@ -1,0 +1,16 @@
+<h1><%= @category.name%></h1>
+
+<h3>Услуги</h3>
+<%= link_to 'Новая услуга', new_category_service_path(@category) %>
+
+<table class="table">
+  <tr class="text-center">
+    <th>Название услуги</th>
+    <th>Стоимость</th>
+    <th>Действия</th>
+    <%= render @category.services %>
+  </tr>
+</table>
+
+<%= link_to 'Редактировать', edit_category_path(@category) %> |
+<%= link_to 'Назад', categories_path %>

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   resources :categories do
-    resources :services
+    resources :services, shallow: true
   end
 
   resources :orders
   resources :executors
 
-  root to: 'services#index'
+  root 'orders#index'
 end

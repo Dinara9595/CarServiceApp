@@ -1,0 +1,7 @@
+<h1>Редактировать услугу</h1>
+<p>
+  <%= @service.name %>
+</p>
+
+<%= render 'form', service: @service %>
+<%= link_to 'Назад', category_path(@service.category) %>

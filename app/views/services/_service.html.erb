@@ -1,0 +1,9 @@
+<tr class="text-center">
+  <td><%= service.name %></td>
+  <td><%= service.price %></td>
+  <td><%= link_to 'Просмотр', service_path(service) %> |
+      <%= link_to 'Редактировать', edit_service_path(service) %> |
+      <%= link_to 'Удалить', service_path(service),
+                  method: :delete,
+                  data: { confirm: "Вы уверены?"} %></td>
+</tr>

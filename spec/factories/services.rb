@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :service do
-    name { "Test service" }
+    name { "Test services" }
 
     trait :invalid do
       name { nil }

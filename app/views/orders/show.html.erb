@@ -1,0 +1,12 @@
+<br>
+<li>
+  <p>Номер заказа:<br><%= @order.id%></p>
+  <p>Клиент:<br><%= @order.client %></p>
+  <p>Исполнитель-сотрудник:<br><%= @order.executor.name %></p>
+  <p>Услуги:<br><%= render @order.services %></p>
+  <th>Время создания заказа: <br><%= @order.created_at %><br></th><br>
+  <p>Общая стоимость заказа: <%= @order.cost %></p>
+</li>
+
+<%= link_to 'Редактировать', edit_order_path(@order) %> |
+<%= link_to 'Назад', orders_path %><br><br>

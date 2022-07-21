@@ -1,0 +1,21 @@
+<br>
+<li>
+  <p>Имя:<br><%= @executor.name%></p><br>
+  <h3>Заказы:</h3><br>
+  <table class="table">
+    <tr class="text-center">
+      <th>Номер заказа</th>
+      <th>Имя клиента</th>
+      <th>Количество услуг в заказе</th>
+      <th>Исполнитель-сотрудник</th>
+      <th>Время создания заказа</th>
+      <th>Общая стоимость заказа</th>
+      <th colspan="3">Действия</th>
+    </tr>
+
+    <%= render @executor.orders %>
+  </table><br><br>
+</li>
+
+<%= link_to 'Редактировать', edit_executor_path(@executor) %> |
+<%= link_to 'Назад', executors_path%><br><br>

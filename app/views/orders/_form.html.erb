@@ -1,0 +1,20 @@
+<%= form_with model: @order, local: true do |form| %>
+  <%= render 'shared/errors', resource: @order  %>
+
+  <p>
+    <%= form.label :Клиент %>
+    <%= form.text_field :client, id: :order_client %>
+  </p><br>
+
+  <p>
+    <%= form.label :Услуги %>:
+    <%= form.collection_check_boxes :service_ids, Service.all, :id, :name, prompt: true %>
+  </p><br>
+
+  <p>
+    <%= form.label :Исполнитель %>:
+    <%= form.collection_select :executor_id, Executor.all, :id, :name, prompt: true %>
+  </p><br>
+
+  <p><%= form.submit%>
+<% end %>

@@ -1,0 +1,9 @@
+<tr class="text-center">
+  <td><%= executor.name %></td>
+  <td><%= executor.orders.count %></td>
+  <td><%= link_to 'Просмотр', executor_path(executor) %> |
+    <%= link_to 'Редактировать', edit_executor_path(executor) %> |
+    <%= link_to 'Удалить', executor_path(executor),
+                method: :delete,
+                data: { confirm: "Вы уверены?"} %></td>
+</tr>

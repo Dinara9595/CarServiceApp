@@ -1,0 +1,13 @@
+<h1><%= @service.name%></h1>
+
+<table class="table">
+  <tr class="text-center">
+    <th>Исполнители-сотрудники</th>
+    <th>Количество заказов исполнителя-сотруника</th>
+    <th>Действия</th>
+    <%= render @service.executors %>
+  </tr>
+</table><br>
+
+<%= link_to 'Редактировать', edit_service_path(@service) %> |
+<%= link_to 'Назад', category_path(@service.category) %><br><br>

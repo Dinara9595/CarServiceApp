@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
-    name { "Test category" }
+    name { "Test categories" }
 
     trait :invalid do
       name { nil }

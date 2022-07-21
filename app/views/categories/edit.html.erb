@@ -1,0 +1,7 @@
+<h1>Редактировать категорию</h1>
+
+<p>
+  <%= @category.name %>
+</p>
+<%= render 'form', category: @category %>
+<%= link_to 'Назад', categories_path %>

@@ -1,0 +1,7 @@
+<h1>Редактировать заказ</h1>
+<p>
+  <%= @order.client %>
+</p>
+
+<%= render 'form', order: @order %>
+<%= link_to 'Назад', orders_path %>

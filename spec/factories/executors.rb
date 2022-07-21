@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :executor do
-    name { "Test executor" }
+    name { "Test executors" }
 
     trait :invalid do
       name { nil }

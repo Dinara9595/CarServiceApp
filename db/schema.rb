@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_07_18_133703) do
 
-  # These are extensions that must be enabled in order to support this database
+  # These are extensions that must be enabled in orders to support this database
   enable_extension "plpgsql"
 
   create_table "baskets", force: :cascade do |t|

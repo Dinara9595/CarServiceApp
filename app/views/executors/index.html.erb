@@ -1,0 +1,20 @@
+<h1>Все исполнители-сотрудники</h1>
+
+<p>
+  <%= link_to 'Новый исполнитель', new_executor_path%><br>
+</p>
+
+<%= render 'shared/errors', resource: @executor %>
+
+<table class="table">
+  <tr class="text-center">
+    <th>Имя</th>
+    <th>Количество заказов</th>
+    <th colspan="3">Действия</th>
+  </tr>
+
+  <%= render @executors %>
+</table><br><br>
+
+<%= link_to 'Все категории услуг', categories_path %><br>
+<%= link_to 'Все заказы', orders_path %>

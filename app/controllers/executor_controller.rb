@@ -1,2 +1,0 @@
-class ExecutorController < ApplicationController
-end

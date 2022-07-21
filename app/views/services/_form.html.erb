@@ -1,0 +1,20 @@
+<%= form_with model: [@category, @service], local: true do |form| %>
+  <%= render 'shared/errors', resource: @service  %>
+
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :service_name %>
+  </p><br>
+
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :service_name %>
+  </p><br>
+
+  <p>
+    <%= form.label :category_id %>:
+    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+  </p><br>
+
+  <p><%= form.submit%>
+<% end %>

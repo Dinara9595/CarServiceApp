@@ -1,0 +1,9 @@
+<tr class="text-center">
+  <td><%= category.name %></td>
+  <td><%= category.services.count %></td>
+  <td><%= link_to 'Просмотр', category_path(category) %> |
+    <%= link_to 'Редактировать', edit_category_path(category) %> |
+    <%= link_to 'Удалить', category_path(category),
+                method: :delete,
+                data: { confirm: "Вы уверены?"} %></td>
+</tr>
