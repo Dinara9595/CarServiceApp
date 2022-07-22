@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   def edit; end
 
   def create
-    @order = Order.new(order_params.merge(basket: Basket.first))
+    @order = Order.new(order_params)
     if @order.save
       redirect_to orders_path
     else

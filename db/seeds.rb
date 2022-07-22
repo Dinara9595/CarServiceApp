@@ -24,11 +24,9 @@ while i <= services.count - 1
   i+=1
 end
 
-baskets = Basket.create!([{cost: 0}])
-
-orders = Order.create!([{ client: 'Иванов Дмитрий Петрович', executor: executors[0], basket: baskets[0] },
-               { client: 'Дмитриев Петр Иванович', executor: executors[5], basket: baskets[0] },
-               { client: 'Петров Иван Дмитриевич', executor: executors[2], basket: baskets[0] }])
+orders = Order.create!([{ client: 'Иванов Дмитрий Петрович', executor: executors[0] },
+               { client: 'Дмитриев Петр Иванович', executor: executors[5] },
+               { client: 'Петров Иван Дмитриевич', executor: executors[2] }])
 
 all_orders = Order.all
 
